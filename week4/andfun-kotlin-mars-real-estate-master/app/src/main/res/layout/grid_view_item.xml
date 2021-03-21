@@ -25,9 +25,6 @@
         <variable
             name="property"
             type="com.example.android.marsrealestate.network.MarsProperty" />
-        <variable
-            name="viewModel"
-            type="com.example.android.marsrealestate.overview.OverviewViewModel" />
     </data>
 
         <LinearLayout
@@ -35,11 +32,11 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+
             <ImageView
                 android:id="@+id/mars_image"
-                android:layout_width="match_parent"
-                android:layout_height="170dp"
-                android:adjustViewBounds="true"
+                android:layout_width="400dp"
+                android:layout_height="186dp"
                 android:padding="2dp"
                 android:scaleType="centerCrop"
                 app:imageUrl="@{property.imgSrcUrl}"
@@ -49,16 +46,16 @@
                 android:id="@+id/mars_type_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{viewModel.marsType}"
+                android:text="@{property.marsType}"
                 android:textColor="#de000000"
-                android:textSize="39sp"
+                android:textSize="24sp"
                 tools:text="To Rent" />
 
             <TextView
                 android:id="@+id/mars_price_value_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{viewModel.marsPrice}"
+                android:text="@{property.marsPrice}"
                 android:textColor="#de000000"
                 android:textSize="20sp"
                 tools:text="$100,000" />

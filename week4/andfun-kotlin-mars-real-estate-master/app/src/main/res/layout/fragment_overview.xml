@@ -46,8 +46,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
             app:listData="@{viewModel.properties}"
-            app:spanCount="1"
-            tools:itemCount="3"
             tools:listitem="@layout/grid_view_item" />
 
         <ImageView

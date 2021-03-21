@@ -31,7 +31,7 @@ enum class MarsApiStatus { LOADING, ERROR, DONE }
 /**
  * The [ViewModel] that is attached to the [OverviewFragment].
  */
-class OverviewViewModel(app: Application) : ViewModel() {
+class OverviewViewModel : ViewModel() {
 
     // The internal MutableLiveData that stores the status of the most recent request
     private val _status = MutableLiveData<MarsApiStatus>()
@@ -117,22 +117,6 @@ class OverviewViewModel(app: Application) : ViewModel() {
         getMarsRealEstateProperties(filter)
     }
 
-
-    var marsPrice = Transformations.map(property) {
-        app.applicationContext.getString(
-                when (it.isRental) {
-                    true -> R.string.display_price_monthly_rental
-                    false -> R.string.display_price
-                }, it.price)
-    }
-    val marsType = Transformations.map(property) {
-        app.applicationContext.getString(R.string.display_type,
-                app.applicationContext.getString(
-                        when(it.isRental) {
-                            true -> R.string.type_rent
-                            false -> R.string.type_sale
-                        }))
-    }
 
 
 }
